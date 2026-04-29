@@ -9,14 +9,13 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
+        Roboto, Arial, sans-serif;
       background: #0b1220;
       color: #e5e7eb;
-      line-height: 1.6;
     }
 
     header {
-      padding: 70px 20px;
+      padding: 60px 20px 20px;
       text-align: center;
       background: #0f172a;
       border-bottom: 1px solid #1f2937;
@@ -24,37 +23,36 @@
 
     header h1 {
       margin: 0;
-      font-size: 44px;
-      font-weight: 700;
-      letter-spacing: -1px;
+      font-size: 40px;
       color: #38bdf8;
     }
 
-    header p {
-      margin-top: 10px;
-      font-size: 18px;
-      color: #94a3b8;
-    }
-
     nav {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
       padding: 12px;
-      background: #0b1220;
       border-bottom: 1px solid #1f2937;
+      background: #0b1220;
     }
 
-    nav a {
+    nav button {
+      background: none;
+      border: 1px solid #1f2937;
       color: #cbd5e1;
-      margin: 0 14px;
-      text-decoration: none;
-      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
     }
 
-    nav a:hover {
+    nav button:hover {
+      border-color: #38bdf8;
       color: #38bdf8;
     }
 
     section {
+      display: none;
       max-width: 900px;
       margin: 30px auto;
       padding: 25px;
@@ -63,9 +61,12 @@
       border-radius: 10px;
     }
 
+    section.active {
+      display: block;
+    }
+
     h2 {
       margin-top: 0;
-      font-size: 22px;
       color: #38bdf8;
       border-bottom: 1px solid #1f2937;
       padding-bottom: 8px;
@@ -79,20 +80,9 @@
       border: 1px solid #1f2937;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 16px;
-      background: #38bdf8;
-      color: #0b1220;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-
     footer {
       text-align: center;
-      padding: 25px;
+      padding: 20px;
       color: #94a3b8;
       border-top: 1px solid #1f2937;
       margin-top: 40px;
@@ -102,57 +92,67 @@
 
 <body>
 
-  <header>
-    <h1>Your Name</h1>
-    <p>Front-End Developer | Student | Builder</p>
-    <a class="btn" href="#contact">Contact Me</a>
-  </header>
+<header>
+  <h1>Your Name</h1>
+</header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <button onclick="showSection('about')">About</button>
+  <button onclick="showSection('projects')">Projects</button>
+  <button onclick="showSection('skills')">Skills</button>
+  <button onclick="showSection('contact')">Contact</button>
+</nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hi! I’m a developer passionate about building modern, clean, and useful web experiences.
-      I enjoy learning new technologies and improving my skills every day.
-    </p>
-  </section>
+<!-- SECTIONS -->
 
-  <section id="projects">
-    <h2>Projects</h2>
+<section id="about" class="active">
+  <h2>About Me</h2>
+  <p>Hi! I'm a developer building clean and modern web experiences.</p>
+</section>
 
-    <div class="card">
-      <strong>Project One</strong>
-      <p>A web app built using HTML, CSS, and JavaScript.</p>
-    </div>
+<section id="projects">
+  <h2>Projects</h2>
 
-    <div class="card">
-      <strong>Project Two</strong>
-      <p>Another project showcasing my development work.</p>
-    </div>
-  </section>
+  <div class="card">
+    <strong>Project One</strong>
+    <p>Cool web app using HTML, CSS, JS.</p>
+  </div>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-      HTML • CSS • JavaScript • GitHub • Basic React
-    </div>
-  </section>
+  <div class="card">
+    <strong>Project Two</strong>
+    <p>Another project showcasing my skills.</p>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yourname@email.com</p>
-    <p>GitHub: github.com/yourusername</p>
-  </section>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">
+    HTML • CSS • JavaScript • GitHub • Basic React
+  </div>
+</section>
 
-  <footer>
-    © 2026 Your Name — Built with GitHub Pages
-  </footer>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    Email: yourname@email.com
+  </div>
+  <div class="card">
+    GitHub: github.com/yourusername
+  </div>
+</section>
+
+<footer>
+  © 2026 Your Name — Built with GitHub Pages
+</footer>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll("section");
+    sections.forEach(sec => sec.classList.remove("active"));
+
+    document.getElementById(id).classList.add("active");
+  }
+</script>
 
 </body>
 </html>
