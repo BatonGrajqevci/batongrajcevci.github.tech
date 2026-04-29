@@ -17,8 +17,8 @@
       background: #0b0f17;
       color: #e5e7eb;
       display: flex;
-      height: 100vh;
-      flex-direction: column;
+      min-height: 100vh;
+      flex-direction: row;
     }
 
     /* SIDEBAR */
@@ -30,6 +30,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
+      flex-shrink: 0; /* Prevents sidebar from shrinking */
     }
 
     .avatar {
@@ -78,7 +79,6 @@
       flex: 1;
       padding: 30px;
       overflow-y: auto;
-      padding-left: 320px; /* To avoid overlap with sidebar */
     }
 
     /* TOP NAV */
@@ -131,6 +131,21 @@
     }
 
     /* Responsive Styles */
+    @media (max-width: 1024px) {
+      body {
+        flex-direction: row;
+      }
+
+      .sidebar {
+        width: 220px;
+        padding: 20px;
+      }
+
+      .main {
+        padding-left: 240px; /* Leave space for the sidebar */
+      }
+    }
+
     @media (max-width: 768px) {
       body {
         flex-direction: column;
@@ -140,15 +155,13 @@
         width: 100%;
         height: auto;
         padding: 15px;
-        border-bottom: 1px solid #1f2937;
         border-right: none;
-        position: relative;
+        border-bottom: 1px solid #1f2937;
       }
 
       .main {
         padding-left: 0;
         padding-right: 15px;
-        margin-top: 15px;
       }
 
       .tabs {
@@ -247,7 +260,7 @@
     <div class="card">
       I am an IT Administrator with hands-on experience managing and configuring moderate-sized network environments. I specialize in network and system troubleshooting, device monitoring, and supporting secure IT operations.
 
-My skills include Active Directory, Microsoft Entra ID, Intune, and access control systems such as card door management. I focus on maintaining reliable infrastructure, resolving technical issues efficiently, and supporting both on-premises and cloud environments.
+      My skills include Active Directory, Microsoft Entra ID, Intune, and access control systems such as card door management. I focus on maintaining reliable infrastructure, resolving technical issues efficiently, and supporting both on-premises and cloud environments.
     </div>
   </div>
 
@@ -265,7 +278,7 @@ My skills include Active Directory, Microsoft Entra ID, Intune, and access contr
 
   <div id="skills" class="section">
     <h2>Skills</h2>
-    <div class="card"></div>
+    <div class="card">HTML • CSS • JS • GitHub</div>
   </div>
 
 </div>
