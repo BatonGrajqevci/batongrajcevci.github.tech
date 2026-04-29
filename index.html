@@ -1,30 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Baton's Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Portfolio</title>
+
   <style>
     body {
-      font-family: Arial;
-      margin: 40px;
-      background: #111;
-      color: white;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
     }
-    h1 { color: #00ffcc; }
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: #111827;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      color: #38bdf8;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #94a3b8;
+    }
+
+    nav {
+      text-align: center;
+      padding: 10px;
+      background: #0b1220;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background: #111827;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111827;
+      color: #94a3b8;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
   </style>
 </head>
+
 <body>
 
-  <h1>Baton Grajcevci</h1>
-  <p>Web Developer</p>
+  <header>
+    <h1>Your Name</h1>
+    <p>Front-End Developer | Student | Builder</p>
+    <a class="btn" href="#contact">Contact Me</a>
+  </header>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>Project 1</li>
-    <li>Project 2</li>
-  </ul>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <h2>Contact</h2>
-  <p>Email: your@email.com</p>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hi! I'm a developer passionate about building clean and modern web applications.
+      I enjoy learning new technologies and creating useful projects.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+      <h3>Project One</h3>
+      <p>A cool web app I built using HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <div class="card">
+      <h3>Project Two</h3>
+      <p>Another project showcasing my development skills.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+      HTML • CSS • JavaScript • GitHub • Basic React
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: yourname@email.com</p>
+    <p>GitHub: github.com/yourusername</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Your Name. Built with GitHub Pages.</p>
+  </footer>
 
 </body>
 </html>
