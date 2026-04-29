@@ -8,20 +8,25 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: #0b1220;
+      color: #e5e7eb;
+      line-height: 1.6;
     }
 
     header {
-      padding: 60px 20px;
+      padding: 70px 20px;
       text-align: center;
-      background: #111827;
+      background: #0f172a;
+      border-bottom: 1px solid #1f2937;
     }
 
     header h1 {
       margin: 0;
-      font-size: 40px;
+      font-size: 44px;
+      font-weight: 700;
+      letter-spacing: -1px;
       color: #38bdf8;
     }
 
@@ -33,50 +38,64 @@
 
     nav {
       text-align: center;
-      padding: 10px;
+      padding: 12px;
       background: #0b1220;
+      border-bottom: 1px solid #1f2937;
     }
 
     nav a {
-      color: #e2e8f0;
-      margin: 0 15px;
+      color: #cbd5e1;
+      margin: 0 14px;
       text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
     }
 
     section {
       max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #0f172a;
+      border: 1px solid #1f2937;
+      border-radius: 10px;
     }
 
     h2 {
+      margin-top: 0;
+      font-size: 22px;
       color: #38bdf8;
-      margin-bottom: 10px;
+      border-bottom: 1px solid #1f2937;
+      padding-bottom: 8px;
     }
 
     .card {
       background: #111827;
       padding: 15px;
-      margin: 10px 0;
+      margin-top: 12px;
       border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111827;
-      color: #94a3b8;
+      border: 1px solid #1f2937;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
+      margin-top: 12px;
+      padding: 10px 16px;
       background: #38bdf8;
-      color: #0f172a;
+      color: #0b1220;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #94a3b8;
+      border-top: 1px solid #1f2937;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -99,8 +118,8 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      Hi! I'm a developer passionate about building clean and modern web applications.
-      I enjoy learning new technologies and creating useful projects.
+      Hi! I’m a developer passionate about building modern, clean, and useful web experiences.
+      I enjoy learning new technologies and improving my skills every day.
     </p>
   </section>
 
@@ -108,13 +127,13 @@
     <h2>Projects</h2>
 
     <div class="card">
-      <h3>Project One</h3>
-      <p>A cool web app I built using HTML, CSS, and JavaScript.</p>
+      <strong>Project One</strong>
+      <p>A web app built using HTML, CSS, and JavaScript.</p>
     </div>
 
     <div class="card">
-      <h3>Project Two</h3>
-      <p>Another project showcasing my development skills.</p>
+      <strong>Project Two</strong>
+      <p>Another project showcasing my development work.</p>
     </div>
   </section>
 
@@ -132,7 +151,7 @@
   </section>
 
   <footer>
-    <p>© 2026 Your Name. Built with GitHub Pages.</p>
+    © 2026 Your Name — Built with GitHub Pages
   </footer>
 
 </body>
