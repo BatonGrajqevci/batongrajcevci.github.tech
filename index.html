@@ -1,187 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio</title>
 
-  <style>
-    body {
+<style>
+  * {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Arial, sans-serif;
-    background: #05070d; /* darker base */
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+  }
+
+  body {
+    background: #0b0f17;
     color: #e5e7eb;
-  }
-
-  header {
-    padding: 60px 20px 20px;
-    text-align: center;
-    background: #0a0f1a;
-    border-bottom: 1px solid #111827;
-  }
-
-  header h1 {
-    margin: 0;
-    font-size: 40px;
-    color: #38bdf8;
-    letter-spacing: -0.5px;
-  }
-
-  nav {
     display: flex;
-    justify-content: center;
-    gap: 12px;
-    padding: 12px;
-    background: #05070d;
-    border-bottom: 1px solid #111827;
+    height: 100vh;
   }
 
-  nav button {
+  /* SIDEBAR */
+  .sidebar {
+    width: 280px;
     background: #0a0f1a;
-    border: 1px solid #111827;
-    color: #cbd5e1;
+    border-right: 1px solid #1f2937;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #111827;
+    border: 2px solid #3b82f6;
+    margin: auto;
+  }
+
+  .name {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .role {
+    text-align: center;
+    font-size: 13px;
+    color: #94a3b8;
+  }
+
+  .info {
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.6;
+  }
+
+  .btn {
+    padding: 10px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .btn:hover {
+    background: #1d4ed8;
+  }
+
+  /* MAIN */
+  .main {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+  }
+
+  /* TOP NAV */
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 10px;
+  }
+
+  .tab {
     padding: 8px 14px;
     border-radius: 6px;
     cursor: pointer;
-    transition: 0.2s ease;
+    color: #94a3b8;
   }
 
-  nav button:hover {
-    border-color: #38bdf8;
-    color: #38bdf8;
-    transform: translateY(-1px);
+  .tab.active {
+    background: #1e293b;
+    color: white;
   }
 
-  section {
+  /* CONTENT */
+  .section {
     display: none;
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 25px;
-    background: #0a0f1a;
-    border: 1px solid #111827;
-    border-radius: 12px;
+    animation: fade 0.3s ease;
   }
 
-  section.active {
+  .section.active {
     display: block;
   }
 
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   h2 {
-    margin-top: 0;
+    margin-bottom: 15px;
     color: #38bdf8;
-    font-size: 22px;
-    border-bottom: 1px solid #111827;
-    padding-bottom: 8px;
   }
 
   .card {
-    background: #070b14;
+    background: #0f172a;
+    border: 1px solid #1f2937;
     padding: 15px;
-    margin-top: 12px;
     border-radius: 10px;
-    border: 1px solid #111827;
+    margin-bottom: 10px;
   }
 
-  footer {
-    text-align: center;
-    padding: 20px;
-    color: #64748b;
-    border-top: 1px solid #111827;
-    margin-top: 40px;
-  }
-    section {
-      display: none;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      background: #0a0f1a;
-      border: 1px solid #111827;
-      border-radius: 12px;
-    
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.35s ease, transform 0.35s ease;
-  }
-
-    section.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-}
-  </style>
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>Your Name</h1>
-</header>
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="avatar"></div>
 
-<nav>
-  <button onclick="showSection('about')">About</button>
-  <button onclick="showSection('projects')">Projects</button>
-  <button onclick="showSection('skills')">Skills</button>
-  <button onclick="showSection('contact')">Contact</button>
-</nav>
+  <div class="name">Your Name</div>
+  <div class="role">Tier 3 Technical Support Engineer</div>
 
-<!-- SECTIONS -->
-
-<section id="about" class="active">
-  <h2>About Me</h2>
-  <p>Hi! I'm a developer building clean and modern web experiences.</p>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="card">
-    <strong>Project One</strong>
-    <p>Cool web app using HTML, CSS, JS.</p>
+  <div class="info">
+    📧 email@example.com<br>
+    📞 +123 456 789<br>
+    📍 Your City
   </div>
 
-  <div class="card">
-    <strong>Project Two</strong>
-    <p>Another project showcasing my skills.</p>
-  </div>
-</section>
+  <button class="btn">Download CV</button>
+</div>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="card">
-    HTML • CSS • JavaScript • GitHub • Basic React
-  </div>
-</section>
+<!-- MAIN -->
+<div class="main">
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    Email: yourname@email.com
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active" onclick="show('about', this)">About</div>
+    <div class="tab" onclick="show('resume', this)">Resume</div>
+    <div class="tab" onclick="show('projects', this)">Projects</div>
+    <div class="tab" onclick="show('skills', this)">Skills</div>
   </div>
-  <div class="card">
-    GitHub: github.com/yourusername
-  </div>
-</section>
 
-<footer>
-  © 2026 Your Name — Built with GitHub Pages
-</footer>
+  <!-- SECTIONS -->
+
+  <div id="about" class="section active">
+    <h2>About Me</h2>
+    <div class="card">
+      Write your professional summary here.
+    </div>
+  </div>
+
+  <div id="resume" class="section">
+    <h2>Resume</h2>
+    <div class="card">Experience 1</div>
+    <div class="card">Experience 2</div>
+  </div>
+
+  <div id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="card">Project One</div>
+    <div class="card">Project Two</div>
+  </div>
+
+  <div id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="card">HTML • CSS • JS • GitHub</div>
+  </div>
+
+</div>
 
 <script>
-  function showSection(id) {
-    const sections = document.querySelectorAll("section");
+function show(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
 
-    sections.forEach(sec => {
-      sec.classList.remove("active");
-    });
-
-    const target = document.getElementById(id);
-
-    // small delay helps animation feel smoother
-    setTimeout(() => {
-      target.classList.add("active");
-    }, 50);
-  }
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
 </script>
 
 </body>
